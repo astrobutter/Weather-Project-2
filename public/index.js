@@ -74,6 +74,12 @@ if (!query){
     var query = 'tokyo';
     checkweather(query);
     getTime(query);
+    setTimeout( function() {
+        $('.info-box').addClass('open');
+    }, 1500);
+    setTimeout( function() {
+        $('.info-box').addClass('close');
+    }, 5000);
 }
 $('.search-button').click( function(e){
     var query = $('.input-area').val();
