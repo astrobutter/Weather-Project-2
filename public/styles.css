@@ -1,0 +1,258 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    font-family: 'Merriweather Sans', sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color:rgba(31, 37, 56, 0.733)
+}
+.container{
+    padding: 60px 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-bar{
+    border: 3px solid rgb(224, 229, 243);
+    border-radius: 15px;
+    padding: 5px 7px;
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.search-bar .input-box{
+    width: 75%;
+}
+input[text]{
+    font-size: 20px;
+    border: none;
+    border-radius: 11px;
+    width: 100%;
+    height: 40px;
+    padding: 3px 8px;
+}
+input[text]:focus{
+    outline:none;
+}
+.search-bar button {
+    border: none;
+    border-radius: 50px;
+    background-image: linear-gradient(to bottom right, rgb(229, 66, 235), rgba(7, 153, 211, 0.705));
+    width: 50px;
+    height: 100%;
+    padding: 7px 5px;
+}
+button:hover{
+    cursor: pointer;
+}
+.card{
+    background-color:#0d0d29;
+    margin: auto;
+    height: auto;
+    width: auto;
+    display: flex;
+    border-radius: 18px;
+}
+.image-container{
+    height: 350px;
+    width: 225px;
+    border-right: 5px solid white;
+    border-radius: 18px;
+}
+.image-card{
+    border-radius: 18px;
+    background: url('image.avif') no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(219, 17, 176, 0.582);
+    background-size: cover;
+    overflow: hidden;
+    background-position:right bottom; 
+    max-width: 100%;
+    height: 100%;
+    color: white;
+    position: relative;
+}
+.image-card .top-text{
+    position: absolute;
+    top: 18px;
+    left: 15px;
+}
+.time-info .day{
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 25px;
+}
+.time-info .date{
+    font-size: 14px;
+}
+.image-card .top-text .location{
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 35px;
+}
+.image-card .bottom-text{
+    position: absolute;
+    bottom: 11px;
+    left: 15px;
+}
+.image-card .bottom-text .temperature{
+    font-weight: 900;
+    font-size: 35px;
+    letter-spacing: 2.5px;
+}
+.image-card .bottom-text .desc{
+    font-weight: 900;
+    font-size: 18px;
+}
+.text-container{
+    height: 350px;
+    width: 225px;
+}
+.text-container .text-card{
+    color:white;
+    font-size: 15px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 18px 0px 18px 18px;
+    row-gap: 25px;
+}
+.text-container .text-card .top-text{
+    width: 95%;
+    height: 29%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.text-container .text-card .top-text .info-row, .text-container .text-card .bottom-text .info-row{
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.text-container .bold-tag{
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 1.0px;
+}
+.text-container .text-card .middle-text{
+    width: 95%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+.text-container .text-card .middle-text img{
+    width: 100%;
+}
+.text-container .text-card .bottom-text{
+    height: 35%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+    padding: 10px;
+}
+.text-container .text-card .bottom-text .info-row{
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+@media (max-width: 800px) {
+    .search-bar{
+        border: 2px solid rgb(224, 229, 243);
+        padding: 5px 7px;
+        width: 55%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .search-bar .input-box{
+        width: 60%;
+    }
+    .search-bar .input-box input[text]{
+        font-size: 17px;
+        border: none;
+        border-radius: 11px;
+        width: 100%;
+        height: 40px;
+        padding: 3px 8px;
+    }
+    .search-bar .input-box input[text]:focus{
+        outline:none;
+    }
+    .search-bar button {
+        border: none;
+        border-radius: 50px;
+        background-image: linear-gradient(to bottom right, rgb(229, 66, 235), rgba(7, 153, 211, 0.705));
+        width: 50px;
+        height: 100%;
+        padding: 7px 5px;
+    }
+    .card{
+        height: 75%;
+        width: 70%;
+        flex-direction: column;
+    }
+    .text-container, .image-container {
+        height: 50%;
+        width: 100%;
+    }
+    .text-container .text-card{
+        color:white;
+        font-size: 15px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 9px 9px 0px;
+        row-gap: 3px;
+    }
+    .text-container .bold-tag{
+        font-weight: 800;
+        font-size: 18px;
+        letter-spacing: 0px;
+    }
+    .text-container .text-card .top-text{
+        width: 100%;
+        height: 29%;
+        padding: 0px;
+    }
+    .text-container .text-card .top-text .info-row, .text-container .text-card .bottom-text .info-row{
+        width: 100%;
+        display: flex;
+        flex-direction:row;
+        /* justify-content: space-between; */
+        padding: 2px 0px;
+    }
+    .text-container .text-card .middle-text{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+    }
+    .text-container .text-card .bottom-text{
+        height: 35%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 9px;
+        padding: 0px;
+    }
+    .text-container .text-card .bottom-text .info-row-desc{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

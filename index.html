@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <div class="search-bar">
+            <div class="input-box">
+                <input class="input-area" text="text" onfocus="this.value=''" placeholder=' "New Delhi"' >
+            </div>
+            <button type="submit" class="search-button">
+                <img width="26" height="26" src="https://img.icons8.com/metro/26/search.png" alt="search"/> 
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="image-container">
+                <div class="image-card">
+                    <div class="top-text">
+                        <div class="time-info">
+                            <div class="day">SUNDAY</div>
+                            <div class="date">0 month, 2011</div>
+                        </div>
+                        <div class="location">
+                            New Delhi, India
+                        </div>
+                    </div>
+                    <div class="bottom-text">
+                        <div class="temperature">11°C</div>
+                        <div class="desc">Cloudy</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-container">
+                <div class="text-card">
+                    <div class="top-text">
+                        <div class="info-row">
+                            <div class="bold-tag">Humidity</div>
+                            <div class="humidity">00 %</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="bold-tag">Wind</div>
+                            <div class="wind">00 km/h</div>
+                        </div>
+                    </div>
+
+                    <div class="middle-text">
+                        <div class="icon-place">
+                            <img src="send.png" class="weather-icon" alt="">
+                        </div>
+                    </div>
+
+                    <div class="bottom-text">
+                        <div class="info-row">
+                            <div class="bold-tag">Weather</div>
+                            <div class="weather">Rain</div>
+                        </div>
+                        <div class="info-row-desc ">
+                            <div class="bold-tag">Desc</div>
+                            <div class="text-desc">Thunderstorm With light rain</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script src="index.js"></script>
+</body>
+</html>
