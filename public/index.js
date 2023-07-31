@@ -13,9 +13,9 @@ async function getTime(city){
                 var date = result.day;
                 var day = result.day_of_week;
                 var year = result.year;
-                
+
                 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                var month = months[parseInt(result.month)];
+                var month = months[parseInt(result.month-1)];
     
                 var current_time = date+' '+month+', '+year;
     
