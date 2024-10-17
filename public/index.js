@@ -6,7 +6,7 @@ async function getTime(city){
     try{
         $.ajax({
             method: 'GET',
-            url: 'https://api.api-ninjas.com/v1/worldtime?city=' + query,
+            url: 'https://timeapi.io/api/time/current/zone?timeZone=' + query,
             headers: { 'X-Api-Key': key},
             contentType: 'application/json',
             success: function(result) {
@@ -71,7 +71,7 @@ async function checkweather(city){
 
 var query = $('.input-area').val();
 if (!query){
-    var query = 'tokyo';
+    var query = 'asia/tokyo';
     checkweather(query);
     getTime(query);
     setTimeout( function() {
