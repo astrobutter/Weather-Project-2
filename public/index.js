@@ -1,16 +1,15 @@
 
 
-async function getTime(city){
+async function getTime(long,lat){
     const key = 'ey1i5vji/M3ImmgrxNIAQA==p1pAvQmQLkRpKoY9';
-    var query = city;
     try{
         $.ajax({
             method: 'GET',
-            url: 'https://timeapi.io/api/time/current/zone?timeZone=' + query,
+            url: `https://timeapi.io/api/time/current/coordinate?latitude=${lat}&longitude=${long}`,
             headers: { 'X-Api-Key': key},
             contentType: 'application/json',
             success: function(result) {
-                var date = result.day-1;
+                var date = result.day;
                 var day = result.day_of_week;
                 var year = result.year;
 
@@ -29,7 +28,7 @@ async function getTime(city){
 }
 async function checkweather(city){
     
-    const query = city.split('/')[1];
+    const query = city;
     const key = '9a37307e1b55c7a5ff58d169b3c9854f';
     let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + query + '&appid=' + key + '&units=metric';
     try{
@@ -45,6 +44,11 @@ async function checkweather(city){
         var location = weatherData.name + ', '+ weatherData.sys.country;
         var weatherId = weatherData.weather[0].id;
         var icon = weatherData.weather[0].icon;
+        var long = weatherData.coord.lon;
+        var lat = weatherData.coord.lat;
+
+        getTime(long, lat);
+
         var imgURL = 'https://openweathermap.org/img/wn/' + icon + '@2x.png';
         var cardweatherdesc;
         
@@ -72,9 +76,9 @@ async function checkweather(city){
 
 var query = $('.input-area').val();
 if (!query){
-    var query = 'asia/tokyo';
+    var query = 'TOKYO';
     checkweather(query);
-    getTime(query);
+    // getTime(query);
     setTimeout( function() {
         $('.info-box').addClass('open');
     }, 1500);
@@ -85,6 +89,6 @@ if (!query){
 $('.search-button').click( function(e){
     var query = $('.input-area').val();
     checkweather(query);
-    getTime(query);
+    // getTime(query);
     $('.input-area').value='';
 })
