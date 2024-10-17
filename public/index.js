@@ -10,7 +10,7 @@ async function getTime(city){
             headers: { 'X-Api-Key': key},
             contentType: 'application/json',
             success: function(result) {
-                var date = result.day;
+                var date = result.day-1;
                 var day = result.day_of_week;
                 var year = result.year;
 
@@ -28,7 +28,8 @@ async function getTime(city){
     }
 }
 async function checkweather(city){
-    const query = city;
+    
+    const query = city.split('/')[1];
     const key = '9a37307e1b55c7a5ff58d169b3c9854f';
     let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + query + '&appid=' + key + '&units=metric';
     try{
